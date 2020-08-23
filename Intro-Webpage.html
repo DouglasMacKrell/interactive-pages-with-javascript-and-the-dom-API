@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<head> </head>
+<head>
+    <style>
+        #div1 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
 <body>
   <div class="class1" id="div1">
-    <div class="class1">Hello World!</div>
+      Hello
+    <div class="class1">World!</div>
   </div>
   <button class="class1" id="button1">
     PRESS ME
   </button>
 
   <script>
-    var class1 = document.getElementsByClassName("class1");
-    var button1 = document.getElementById("button1");
-    var divs = document.getElementsByTagName("DIV");
-    var first = document.querySelector(".class1");
-    var all = document.querySelectorAll(".class1");
+      var div1 = document.getElementById('div1')
+      var div1Class = div1.getAttribute('class') // id or value also valid
+      var div1HTML = div1.innerHTML
+      var noValueDiv1Color = div1.style.backgroundColor
+      var div1ComputedStyle = window.getComputedStyle(div1).backgroundColor
 
-    var div1 = document.getElementById("div1");
-    var innerDiv = div1.getElementsByClassName("class1")
+      div1.setAttribute('class', 'class2')
+      div1.innerHTML = "Goodbye"
+      alert(div1.getAttribute('class'))
 
-    alert(class1[0].innerHTML);
+      div1.style.backgroundColor = "#0000ff"
+      div1.setAttribute('style', 'height: 100px;')
+
+    //   fetching elements from DOM
+    // var class1 = document.getElementsByClassName("class1");
+    // var button1 = document.getElementById("button1");
+    // var divs = document.getElementsByTagName("DIV");
+    // var first = document.querySelector(".class1");
+    // var all = document.querySelectorAll(".class1");
+
+    // var div1 = document.getElementById("div1");
+    // var innerDiv = div1.getElementsByClassName("class1")
+
+    // alert(class1[0].innerHTML);
   </script>
 </body>
