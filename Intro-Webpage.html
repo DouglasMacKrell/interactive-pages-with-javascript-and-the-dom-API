@@ -2,7 +2,7 @@
 <head> </head>
 <body>
   <div class="class1" id="div1">
-    Hello World
+    <div class="class1">Hello World!</div>
   </div>
   <button class="class1" id="button1">
     PRESS ME
@@ -14,6 +14,9 @@
     var divs = document.getElementsByTagName("DIV");
     var first = document.querySelector(".class1");
     var all = document.querySelectorAll(".class1");
+
+    var div1 = document.getElementById("div1");
+    var innerDiv = div1.getElementsByClassName("class1")
 
     alert(class1[0].innerHTML);
   </script>
