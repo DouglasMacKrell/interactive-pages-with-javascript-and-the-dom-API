@@ -14,21 +14,34 @@
   <button class="class1" id="button1">
     PRESS ME
   </button>
+  <form id="form">
+      NAME: <input type="text">
+      <input type="submit" value="Save">
+  </form>
 
   <script>
-      document.addEventListener('DOMContentLoaded', (e) => {
-          alert('page has been loaded')
+      // client side form submit
+      var form = document.getElementById('form')
+      form.addEventListener('submit', (e) => {
+          e.preventDefault()
+          var textInput = form.elements[0]
+          alert(textInput.value)
       })
 
-      document.getElementById('div1').addEventListener('mouseover', (e) => {
-          event.target.style.backgroundColor = "#0000ff"
-      })
+    //   event listeners
+    //   document.addEventListener('DOMContentLoaded', (e) => {
+    //       alert('page has been loaded')
+    //   })
 
-      var button1 = document.getElementById('button1')
-      button1.addEventListener('click', (e) => {
-          target = event.target
-          alert(target.innerHTML)
-      })
+    //   document.getElementById('div1').addEventListener('mouseover', (e) => {
+    //       event.target.style.backgroundColor = "#0000ff"
+    //   })
+
+    //   var button1 = document.getElementById('button1')
+    //   button1.addEventListener('click', (e) => {
+    //       target = event.target
+    //       alert(target.innerHTML)
+    //   })
 
       // add and remove elements
     //   var div1 = document.getElementById('div1')
