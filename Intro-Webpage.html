@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <head>
-    <style>
-        #div1 {
-            background-color: yellowgreen;
-        }
-    </style>
+  <style>
+    #div1 {
+      background-color: yellowgreen;
+    }
+  </style>
 </head>
 <body>
   <div class="class1" id="div1">
-      Hello
+    Hello
     <div class="class1">World!</div>
   </div>
   <button class="class1" id="button1">
@@ -17,17 +17,25 @@
 
   <script>
       var div1 = document.getElementById('div1')
-      var div1Class = div1.getAttribute('class') // id or value also valid
-      var div1HTML = div1.innerHTML
-      var noValueDiv1Color = div1.style.backgroundColor
-      var div1ComputedStyle = window.getComputedStyle(div1).backgroundColor
+      var newDiv = document.createElement('div')
+      newDiv.innerHTML = "Hello there"
+      div1.appendChild(newDiv) // adds to the end
+      document.body.removeChild(div1)
 
-      div1.setAttribute('class', 'class2')
-      div1.innerHTML = "Goodbye"
-      alert(div1.getAttribute('class'))
 
-      div1.style.backgroundColor = "#0000ff"
-      div1.setAttribute('style', 'height: 100px;')
+    // getting and setting attributes
+    //   var div1 = document.getElementById('div1')
+    //   var div1Class = div1.getAttribute('class') // id or value also valid
+    //   var div1HTML = div1.innerHTML
+    //   var noValueDiv1Color = div1.style.backgroundColor
+    //   var div1ComputedStyle = window.getComputedStyle(div1).backgroundColor
+
+    //   div1.setAttribute('class', 'class2')
+    //   div1.innerHTML = "Goodbye"
+    //   alert(div1.getAttribute('class'))
+
+    //   div1.style.backgroundColor = "#0000ff"
+    //   div1.setAttribute('style', 'height: 100px;')
 
     //   fetching elements from DOM
     // var class1 = document.getElementsByClassName("class1");
