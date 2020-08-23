@@ -16,11 +16,26 @@
   </button>
 
   <script>
-      var div1 = document.getElementById('div1')
-      var newDiv = document.createElement('div')
-      newDiv.innerHTML = "Hello there"
-      div1.appendChild(newDiv) // adds to the end
-      document.body.removeChild(div1)
+      document.addEventListener('DOMContentLoaded', (e) => {
+          alert('page has been loaded')
+      })
+
+      document.getElementById('div1').addEventListener('mouseover', (e) => {
+          event.target.style.backgroundColor = "#0000ff"
+      })
+
+      var button1 = document.getElementById('button1')
+      button1.addEventListener('click', (e) => {
+          target = event.target
+          alert(target.innerHTML)
+      })
+
+      // add and remove elements
+    //   var div1 = document.getElementById('div1')
+    //   var newDiv = document.createElement('div')
+    //   newDiv.innerHTML = "Hello there"
+    //   div1.appendChild(newDiv) // adds to the end
+    //   document.body.removeChild(div1)
 
 
     // getting and setting attributes
