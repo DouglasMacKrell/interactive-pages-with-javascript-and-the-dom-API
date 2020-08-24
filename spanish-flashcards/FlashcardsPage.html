@@ -70,16 +70,33 @@
     </div>
   </div>
   <script>
-    var firstButton = document.getElementsByClassName("card-button")[0];
-    var firstAnswer = document.getElementsByClassName("card-answer")[0];
-    firstButton.addEventListener("click", (e) => {
-      if (firstButton.innerHTML === "SHOW") {
-        firstAnswer.style.display = "Block";
-        firstButton.innerHTML = "HIDE";
-      } else if (firstButton.innerHTML === "HIDE") {
-          firstAnswer.style.display = "None"
-          firstButton.innerHTML = "SHOW"
+    // var firstButton = document.getElementsByClassName("card-button")[0];
+    // var firstAnswer = document.getElementsByClassName("card-answer")[0];
+    // firstButton.addEventListener("click", (e) => {
+    //   if (firstButton.innerHTML === "SHOW") {
+    //     firstAnswer.style.display = "Block";
+    //     firstButton.innerHTML = "HIDE";
+    //   } else if (firstButton.innerHTML === "HIDE") {
+    //       firstAnswer.style.display = "None"
+    //       firstButton.innerHTML = "SHOW"
+    //   }
+    // });
+
+    var cards = document.getElementsByClassName("card");
+    for (let cardIndex in cards) {
+      var button = cards[cardIndex].querySelector(".card-button");
+      button.addEventListener("click", (e) => {
+        var currentButton = e.target;
+        var currentCard = currentButton.parentNode;
+        var currentAnswer = currentCard.querySelector(".card-answer")
+        if (currentButton.innerHTML === "SHOW") {
+        currentAnswer.style.display = "Block";
+        currentButton.innerHTML = "HIDE";
+      } else if (currentButton.innerHTML === "HIDE") {
+          currentAnswer.style.display = "None"
+          currentButton.innerHTML = "SHOW"
       }
-    });
+      });
+    }
   </script>
 </body>
