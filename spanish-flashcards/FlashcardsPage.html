@@ -2,43 +2,43 @@
 <head>
   <style>
     body {
-        padding: 40px;
-        background-color: #5f9fff;
-        font-family: 'Courier New', Courier, monospace;
+      padding: 40px;
+      background-color: #5f9fff;
+      font-family: "Courier New", Courier, monospace;
     }
 
     .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
     }
 
     .card {
-        flex: none;
-        margin-top: 10px;
-        padding: 20px;
-        border-radius: 20px;
-        background-color: white;
+      flex: none;
+      margin-top: 10px;
+      padding: 20px;
+      border-radius: 20px;
+      background-color: white;
     }
 
     .card-title,
     .card-answer {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        text-align: center;
-        font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: bold;
     }
 
     .card-button {
-        width: 100%;
-        margin-top: 10px;
-        border: 1px solid #0070bb;
-        background: white;
-        color: #0070bb;
+      width: 100%;
+      margin-top: 10px;
+      border: 1px solid #0070bb;
+      background: white;
+      color: #0070bb;
     }
 
     .card-answer {
-        display: none;
+      display: none;
     }
   </style>
 </head>
@@ -69,4 +69,17 @@
       <div class="card-answer">Silla</div>
     </div>
   </div>
+  <script>
+    var firstButton = document.getElementsByClassName("card-button")[0];
+    var firstAnswer = document.getElementsByClassName("card-answer")[0];
+    firstButton.addEventListener("click", (e) => {
+      if (firstButton.innerHTML === "SHOW") {
+        firstAnswer.style.display = "Block";
+        firstButton.innerHTML = "HIDE";
+      } else if (firstButton.innerHTML === "HIDE") {
+          firstAnswer.style.display = "None"
+          firstButton.innerHTML = "SHOW"
+      }
+    });
+  </script>
 </body>
