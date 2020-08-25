@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    body {
+      padding: 40px;
+      background-color: #b10dc9;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    #search-bar {
+      height: 40px;
+      width: 80%;
+      font-size: 20px;
+    }
+
+    .adventures-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 40px;
+    }
+
+    .adventure {
+      width: 120px;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 10px;
+      text-align: center;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Doug's Adventure Finder</h1>
+  <div class="search-container"><input id="search-bar" type="text" /></div>
+  <div class="adventures-container">
+    <div class="adventure">Mountain Bike Tour</div>
+    <div class="adventure">Weenie Roast</div>
+    <div class="adventure">Sky Diving</div>
+    <div class="adventure">Local Food Festival</div>
+    <div class="adventure">Sunday Market Store</div>
+    <div class="adventure">Food Tasting Tour</div>
+    <div class="adventure">Snorkeling Tour</div>
+    <div class="adventure">Forest Experience</div>
+    <div class="adventure">Movie Date</div>
+    <div class="adventure">Theater Show</div>
+    <div class="adventure">Rock Concert</div>
+    <div class="adventure">Dinner and Dancing</div>
+  </div>
+
+  <script>
+    var adventureList = [];
+    var adventures = document.getElementsByClassName("adventure");
+    for (let i = 0; i < adventures.length; i++) {
+      var adventureName = adventures[i].innerHTML;
+      adventureList.push(adventureName);
+    }
+
+    var searchBar = document.getElementById("search-bar");
+    searchBar.addEventListener("keyup", (e) => {
+      var text = searchBar.value;
+      for (let i = 0; i < adventures.length; i++) {
+        if (adventureList[i].indexOf(text) < 0) {
+            adventures[i].style.display = "none"
+        } else {
+            adventures[i].style.display = "block"
+        }
+      }
+    });
+  </script>
+</body>
